@@ -1,12 +1,15 @@
 class ArticlesController < ApplicationController
- 
+  
+  #skip_before_action :authenticate_user! 
+load_and_authorize_resource
   def index
     @articles = Article.all
   end
   
   def show
-    @article = Article.find(params[:id])
-  end
+  @article = Article.find(params[:id])
+  authorize! :read, @article
+end
   
   def tresc
     @article = Article.find(params[:id])
