@@ -1,4 +1,7 @@
 %p
   %strong Text:
   = @article.text
-= link_to 'Back', articles_path
+  %br
+.btn-group
+  %button.btn.btn-inverse.btn-xs{:href => "#"} 
+    = link_to 'Back', articles_path

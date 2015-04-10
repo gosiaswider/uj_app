@@ -1,13 +1,22 @@
-%p
+%h3
   %strong Title:
   = @article.title
-%p
+%h3
   %strong Text:
   = @article.text
-%h2 Comments
-= render @article.comments
-%h2 Add a comment:
+%br
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title Comments
+  .panel-body
+    = render @article.comments
+%h4 Add a comment:
 = render 'comments/form'
-= link_to 'Edit Article', edit_article_path(@article)
-|
-= link_to 'Back to Articles', articles_path
+%br
+
+.btn-group
+  %button.btn.btn-inverse{:href => "#"} 
+    = link_to 'Edit Article', edit_article_path(@article)
+.btn-group
+  %button.btn.btn-inverse{:href => "#"} 
+    = link_to 'Back to Articles', articles_path
