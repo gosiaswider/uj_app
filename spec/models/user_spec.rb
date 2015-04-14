@@ -9,3 +9,13 @@ describe User do
     end
   end
 end
+
+describe User do
+  describe 'initials' do
+    it 'returns user initials' do
+      user = User.new(first_name: 'John', last_name: 'Smith')
+      
+      expect(user.initials).to eq 'JS'
+    end
+  end
+end
