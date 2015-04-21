@@ -23,4 +23,16 @@ describe ArticlesController do
       expect(assigns(:article).title).to eq @article.title
     end
   end
+  
+  describe 'new' do
+    it 'create a new article' do
+      @request.env["devise.mapping"]=Devise.mappings[:admin]
+      sign_in FactoryGirl.create(:admin)
+      get :new
+
+      expect(response).to have_http_status(:success)
+      expect(assigns(:article)).not_to eq nil
+    end
+  end
+  
 end
