@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 feature 'home page' do
   describe 'user visit home page', type: :feature do
     it 'use see home page' do
