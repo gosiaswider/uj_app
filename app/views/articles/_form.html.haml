@@ -19,6 +19,8 @@
   %p
     - if @article.picture.present?
       = image_tag @article.picture.url(:medium )
+      Remove the picture
+      = f.check_box :remove_picture
     - else
       =f.file_field :picture
   %p
