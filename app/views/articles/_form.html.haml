@@ -17,6 +17,9 @@
     %br/
     = f.text_area :text
   %p
-    =f.file_field :picture
+    - if @article.picture.present?
+      = image_tag @article.picture.url(:medium )
+    - else
+      =f.file_field :picture
   %p
     = f.submit
