@@ -5,6 +5,9 @@
   %strong Text:
   = @article.text
 %br
+%strong Picture:
+= image_tag @article.picture.url(:medium)
+%br
 .panel.panel-default
   .panel-heading
     %h3.panel-title Comments
